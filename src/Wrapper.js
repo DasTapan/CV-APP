@@ -75,7 +75,14 @@ class Wrapper extends Component {
           updateProjects={this.updateProjects}
           updateEducation={this.updateEducation}
         />
-        <Outlet />
+        <Outlet
+          personalDetails={this.state.personalInfo}
+          skillDetails={this.state.skills}
+          langDetails={this.state.languages}
+          interestDetails={this.state.interests}
+          projectDetails={this.state.projects}
+          eduDetails={this.state.education}
+        />
       </div>
     );
   }

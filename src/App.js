@@ -1,4 +1,5 @@
 import "./styles/intake.css";
+import "./styles/outlet.css";
 import Wrapper from "./Wrapper";
 
 function App() {

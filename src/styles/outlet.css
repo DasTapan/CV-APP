@@ -1,0 +1,106 @@
+@font-face {
+  font-family: SpaceMono;
+  src: url("../components/assets/fonts/Space_Mono/SpaceMono-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: SpaceMono;
+  src: url("../components/assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: SpaceMono;
+  src: url("../components/assets/fonts/Space_Mono/SpaceMono-Italic.ttf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: SpaceMono;
+  src: url("../components/assets/fonts/Space_Mono/SpaceMono-Regular.ttf");
+  font-style: normal;
+}
+
+.outlet {
+  padding: 15px;
+  font-family: SpaceMono, "Courier New", Courier, monospace, system-ui,
+    -apple-system, "Segoe UI", Roboto, Ubuntu, "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+.personal-details > .heading {
+  color: rgb(1, 28, 97);
+  margin-bottom: 2px;
+}
+
+span.name {
+  margin-right: 35px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.2px;
+}
+
+span.job-title {
+  font-style: italic;
+  font-size: 1.15rem;
+}
+
+.email-icon,
+.phone-icon {
+  background-size: 100% 100%;
+  margin-right: 5px;
+}
+
+.email-icon {
+  height: 15px;
+  width: 15px;
+}
+
+.phone-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.item-email > span:first-child {
+  background-image: url("../components/assets/email-icon.svg");
+}
+
+.item-phone > span:first-child {
+  background-image: url("../components/assets/phone-icon.svg");
+}
+
+.item-email,
+.item-phone {
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+
+.item-phone {
+  left: 180px;
+}
+
+.item-email span,
+.item-phone span {
+  font-size: 0.85rem;
+}
+
+.personal-details {
+  position: relative;
+}
+
+.item-pic {
+  height: 100px;
+  width: 100px;
+  border: 2px solid;
+  border-radius: 50%;
+  position: absolute;
+  left: 425px;
+  top: 15px;
+}
+
+.personal-details > div {
+  border: 2px solid red;
+}
