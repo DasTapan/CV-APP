@@ -3,6 +3,7 @@ import PersonalDetails from "./PersonalDetails";
 import SkillDetails from "./SkillDetails";
 import LangDetails from "./LangDetails";
 import InterestDetails from "./InterestDetails";
+import ProjectDetails from "./ProjectDetails";
 
 class Outlet extends Component {
   render() {
@@ -12,6 +13,7 @@ class Outlet extends Component {
         <SkillDetails info={this.props.skillDetails} />
         <LangDetails info={this.props.langDetails} />
         <InterestDetails info={this.props.interestDetails} />
+        <ProjectDetails info={this.props.projectDetails} />
       </div>
     );
   }

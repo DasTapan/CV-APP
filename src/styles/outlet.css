@@ -23,6 +23,10 @@
   font-style: normal;
 }
 
+p {
+  margin: 0;
+}
+
 .outlet {
   padding: 15px;
   font-family: SpaceMono, "Courier New", Courier, monospace, system-ui,
@@ -176,7 +180,7 @@ span.job-title {
 .language-details span:not(:last-child)::after {
   content: ".";
   position: absolute;
-  right: -5px;
+  right: -6px;
   top: -8px;
   font-weight: bold;
   font-size: 1.3rem;
@@ -196,5 +200,30 @@ span.job-title {
 }
 
 .language-details .section-items span {
+  padding: 0 6px;
   border: 0;
+}
+
+.item > .title span:nth-child(2),
+.project-items p {
+  font-size: 0.72rem;
+}
+
+.item > .title span:nth-child(2) {
+  font-style: italic;
+}
+
+.project-title {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+span.project-title::after {
+  content: ",";
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.project-items .item {
+  margin-bottom: 5px;
 }
