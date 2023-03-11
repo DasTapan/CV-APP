@@ -115,7 +115,7 @@ class PersonalInfo extends Component {
               name="phone"
               onChange={this.handleChange}
               value={this.state.phone}
-              pattern="^\d{10}$"
+              required
             />
           </div>
           <div className="form-row city">
