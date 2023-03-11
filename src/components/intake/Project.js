@@ -104,6 +104,7 @@ class Project extends Component {
               name="text"
               value={this.state.value.text}
               onChange={this.handleChange}
+              required
             />
           </div>
           <div className="form-row">
@@ -113,6 +114,7 @@ class Project extends Component {
               name="subTitle"
               value={this.state.value.subTitle}
               onChange={this.handleChange}
+              required
             />
           </div>
           <div className="form-row">
@@ -121,6 +123,7 @@ class Project extends Component {
               name="description"
               value={this.state.value.description}
               onChange={this.handleChange}
+              required
             ></textarea>
           </div>
           <div className="form-row submit-btn">

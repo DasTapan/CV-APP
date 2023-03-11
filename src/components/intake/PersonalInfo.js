@@ -85,6 +85,7 @@ class PersonalInfo extends Component {
               name="fullName"
               onChange={this.handleChange}
               value={this.state.fullName}
+              required
             />
           </div>
           <div className="form-row job-title">
@@ -94,6 +95,7 @@ class PersonalInfo extends Component {
               name="jobTitle"
               onChange={this.handleChange}
               value={this.state.jobTitle}
+              required
             />
           </div>
           <div className="form-row email">
@@ -103,6 +105,7 @@ class PersonalInfo extends Component {
               name="email"
               onChange={this.handleChange}
               value={this.state.email}
+              required
             />
           </div>
           <div className="form-row phone">
@@ -112,6 +115,7 @@ class PersonalInfo extends Component {
               name="phone"
               onChange={this.handleChange}
               value={this.state.phone}
+              pattern="^\d{10}$"
             />
           </div>
           <div className="form-row city">
@@ -121,6 +125,7 @@ class PersonalInfo extends Component {
               name="city"
               onChange={this.handleChange}
               value={this.state.city}
+              required
             />
           </div>
           <div className="form-row country">
@@ -130,6 +135,7 @@ class PersonalInfo extends Component {
               name="country"
               onChange={this.handleChange}
               value={this.state.country}
+              required
             />
           </div>
           <div className="form-row linkedIn">
@@ -139,6 +145,7 @@ class PersonalInfo extends Component {
               name="linkedIn"
               onChange={this.handleChange}
               value={this.state.linkedIn}
+              required
             />
           </div>
           <div className="form-row submit-btn">

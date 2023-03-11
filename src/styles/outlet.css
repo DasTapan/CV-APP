@@ -44,11 +44,13 @@ span.name {
   font-weight: 700;
   font-size: 1.4rem;
   letter-spacing: 0.2px;
+  text-transform: capitalize;
 }
 
 span.job-title {
   font-style: italic;
   font-size: 1.15rem;
+  text-transform: capitalize;
 }
 
 .email-icon,
@@ -166,6 +168,7 @@ span.job-title {
   border: 1px solid black;
   border-radius: 5px;
   position: relative;
+  text-transform: capitalize;
 }
 
 .language-details span:not(:last-child)::after {
@@ -207,6 +210,7 @@ span.job-title {
 .project-title {
   font-weight: bold;
   font-size: 0.8rem;
+  text-transform: capitalize;
 }
 
 span.project-title::after {
@@ -232,6 +236,7 @@ span.project-title::after {
 .edu-items span.degree {
   font-weight: bold;
   font-size: 0.8rem;
+  text-transform: capitalize;
 }
 
 .edu-items span.university {

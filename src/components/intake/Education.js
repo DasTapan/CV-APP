@@ -104,6 +104,7 @@ class Education extends Component {
               name="text"
               onChange={this.handleChange}
               value={this.state.value.text}
+              required
             />
           </div>
           <div className="form-row">
@@ -113,6 +114,7 @@ class Education extends Component {
               name="university"
               onChange={this.handleChange}
               value={this.state.value.university}
+              required
             />
           </div>
           <div className="form-row">
@@ -122,6 +124,7 @@ class Education extends Component {
               name="loc"
               onChange={this.handleChange}
               value={this.state.value.loc}
+              required
             />
           </div>
           <div className="form-row submit-btn">

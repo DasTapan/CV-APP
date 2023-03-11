@@ -42,6 +42,7 @@ class GeneralForm extends Component {
             type="text"
             value={this.state.value.text}
             onChange={this.handleChange}
+            required
           />
           <button type="submit"></button>
         </form>
