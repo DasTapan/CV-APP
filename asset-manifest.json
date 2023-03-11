@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/CV-APP/static/css/main.d5f48432.css",
+    "main.js": "/CV-APP/static/js/main.727ffa50.js",
+    "static/media/SpaceMono-Italic.ttf": "/CV-APP/static/media/SpaceMono-Italic.0daff04789950b311b31.ttf",
+    "static/media/SpaceMono-BoldItalic.ttf": "/CV-APP/static/media/SpaceMono-BoldItalic.973410642f95c92e505b.ttf",
+    "static/media/SpaceMono-Regular.ttf": "/CV-APP/static/media/SpaceMono-Regular.8a2aa304d0bd5e41d186.ttf",
+    "static/media/SpaceMono-Bold.ttf": "/CV-APP/static/media/SpaceMono-Bold.056ac3ebe5f65cb5c4ac.ttf",
+    "static/media/profile.jpg": "/CV-APP/static/media/profile.fa2ac220e6e777e981c1.jpg",
+    "static/media/linkedin-icon.svg": "/CV-APP/static/media/linkedin-icon.44906b3d6741f28a9229.svg",
+    "static/media/email-icon.svg": "/CV-APP/static/media/email-icon.1c05c5a056b4dada7df0.svg",
+    "static/media/phone-icon.svg": "/CV-APP/static/media/phone-icon.2a552f8f0fc7a8448ccf.svg",
+    "index.html": "/CV-APP/index.html",
+    "static/media/pin-icon.svg": "/CV-APP/static/media/pin-icon.bd640ddc4b45e15acdd9.svg",
+    "main.d5f48432.css.map": "/CV-APP/static/css/main.d5f48432.css.map",
+    "main.727ffa50.js.map": "/CV-APP/static/js/main.727ffa50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d5f48432.css",
+    "static/js/main.727ffa50.js"
+  ]
+}
