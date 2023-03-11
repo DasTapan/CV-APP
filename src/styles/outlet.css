@@ -163,6 +163,7 @@ span.job-title {
   row-gap: 5px;
   justify-content: flex-start;
   padding: 7px 10px 20px;
+  font-size: 0.82rem;
 }
 
 .section-items span {
@@ -179,6 +180,19 @@ span.job-title {
   top: -8px;
   font-weight: bold;
   font-size: 1.3rem;
+}
+
+.interest-details span:not(:last-child)::after {
+  content: ",";
+  position: absolute;
+  right: -8px;
+  top: -6px;
+  font-size: 1.2rem;
+}
+
+.interest-details .section-items span {
+  border: 0;
+  padding: 0 2px;
 }
 
 .language-details .section-items span {
