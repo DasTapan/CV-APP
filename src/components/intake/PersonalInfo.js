@@ -8,7 +8,9 @@ class PersonalInfo extends Component {
       jobTitle: "",
       phone: "",
       email: "",
-      address: "",
+      city: "",
+      country: "",
+      linkedIn: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,7 +32,9 @@ class PersonalInfo extends Component {
             this.state.jobTitle,
             this.state.email,
             this.state.phone,
-            this.state.address
+            this.state.city,
+            this.state.country,
+            this.state.linkedIn
           );
         }
       );
@@ -63,7 +67,9 @@ class PersonalInfo extends Component {
       this.state.jobTitle,
       this.state.email,
       this.state.phone,
-      this.state.address
+      this.state.city,
+      this.state.country,
+      this.state.linkedIn
     );
   }
 
@@ -113,13 +119,32 @@ class PersonalInfo extends Component {
               value={this.state.phone}
             />
           </div>
-          <div className="form-row address">
-            <label htmlFor="">Address</label>
-            <textarea
-              name="address"
+          <div className="form-row city">
+            <label htmlFor="">City</label>
+            <input
+              type="text"
+              name="city"
               onChange={this.handleChange}
-              value={this.state.address}
-            ></textarea>
+              value={this.state.city}
+            />
+          </div>
+          <div className="form-row country">
+            <label htmlFor="">Country</label>
+            <input
+              type="text"
+              name="country"
+              onChange={this.handleChange}
+              value={this.state.country}
+            />
+          </div>
+          <div className="form-row linkedIn">
+            <label htmlFor="">LinkedIn</label>
+            <input
+              type="url"
+              name="linkedIn"
+              onChange={this.handleChange}
+              value={this.state.linkedIn}
+            />
           </div>
           <div className="form-row submit-btn">
             <button type="submit">Add</button>

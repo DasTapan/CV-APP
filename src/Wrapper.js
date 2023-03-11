@@ -22,14 +22,16 @@ class Wrapper extends Component {
     this.updateEducation = this.updateEducation.bind(this);
   }
 
-  updatePInfo(fullName, jobTitle, email, phone, address) {
+  updatePInfo(fullName, jobTitle, email, phone, city, country, linkedIn) {
     this.setState({
       personalInfo: {
         fullName,
         jobTitle,
         email,
         phone,
-        address,
+        city,
+        country,
+        linkedIn,
       },
     });
   }

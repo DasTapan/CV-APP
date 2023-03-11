@@ -194,6 +194,12 @@ textarea:focus {
   left: 220px;
 }
 
+.form-row.country {
+  position: absolute;
+  left: 220px;
+  top: 116px;
+}
+
 .form-row {
   margin-bottom: 10px;
 }
