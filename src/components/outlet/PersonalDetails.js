@@ -26,7 +26,6 @@ class PersonalDetails extends Component {
           <span className="linkedIn-icon"></span>
           <span>{this.props.info.linkedIn}</span>
         </div>
-        <div className="item-pic"></div>
       </div>
     );
   }

@@ -78,11 +78,6 @@ class PersonalInfo extends Component {
       <div className="personal-info">
         <h3>Personal Info</h3>
         <form action="" onSubmit={this.handleSubmit}>
-          <div className="form-row profile-pic">
-            <div className="pic"></div>
-            <input type="file" />
-          </div>
-
           <div className="form-row full-name">
             <label htmlFor="">Full Name</label>
             <input

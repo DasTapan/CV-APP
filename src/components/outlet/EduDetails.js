@@ -6,7 +6,7 @@ class EduDetails extends Component {
 
     return (
       <div className="edu-details">
-        <div className="section-heading">PROJECTS</div>
+        <div className="section-heading">EDUCATION</div>
         <div className="edu-items">
           {education.map((degree) => {
             return (
