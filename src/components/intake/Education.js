@@ -9,6 +9,7 @@ class Education extends Component {
       value: {
         text: "",
         loc: "",
+        university: "",
         id: uniqid(),
       },
       education: [],
@@ -64,6 +65,7 @@ class Education extends Component {
         value: {
           text: "",
           loc: "",
+          university: "",
           id: uniqid(),
         },
         education: this.state.education.concat(this.state.value),
@@ -102,6 +104,15 @@ class Education extends Component {
               name="text"
               onChange={this.handleChange}
               value={this.state.value.text}
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="">University :</label>
+            <input
+              type="text"
+              name="university"
+              onChange={this.handleChange}
+              value={this.state.value.university}
             />
           </div>
           <div className="form-row">
