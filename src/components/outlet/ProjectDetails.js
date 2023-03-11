@@ -6,7 +6,7 @@ class ProjectDetails extends Component {
 
     return (
       <div className="project-details">
-        <div className="section-heading">INTERESTS</div>
+        <div className="section-heading">PROJECTS</div>
         <div className="project-items">
           {projects.map((project) => {
             return (

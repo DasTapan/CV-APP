@@ -227,3 +227,27 @@ span.project-title::after {
 .project-items .item {
   margin-bottom: 5px;
 }
+
+.edu-items .item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edu-items span.degree::after {
+  content: ",";
+  margin-right: 3px;
+}
+
+.edu-items span.degree {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.edu-items span.university {
+  font-style: italic;
+  font-size: 0.75rem;
+}
+
+.edu-items span.location {
+  font-size: 0.8rem;
+}
