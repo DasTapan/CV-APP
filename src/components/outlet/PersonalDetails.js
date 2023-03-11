@@ -16,6 +16,16 @@ class PersonalDetails extends Component {
           <span className="phone-icon"></span>
           <span>{this.props.info.phone}</span>
         </div>
+        <div className="item-location">
+          <span className="location-icon"></span>
+          <span>
+            {this.props.info.city}, {this.props.info.country}
+          </span>
+        </div>
+        <div className="item-linkedIn">
+          <span className="linkedIn-icon"></span>
+          <span>{this.props.info.linkedIn}</span>
+        </div>
         <div className="item-pic"></div>
       </div>
     );
