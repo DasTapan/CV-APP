@@ -166,11 +166,21 @@ span.job-title {
 }
 
 .section-items span {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 5px;
-  justify-content: flex-start;
   padding: 0 10px;
   border: 1px solid black;
   border-radius: 5px;
+  position: relative;
+}
+
+.language-details span:not(:last-child)::after {
+  content: ".";
+  position: absolute;
+  right: -5px;
+  top: -8px;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.language-details .section-items span {
+  border: 0;
 }
