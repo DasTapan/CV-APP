@@ -1,160 +1,165 @@
-import React, { Component } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 
-class PersonalInfo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fullName: "",
-      jobTitle: "",
-      phone: "",
-      email: "",
-      city: "",
-      country: "",
-      linkedIn: "",
-    };
+export default function PersonalInfo({ updatePInfo }) {
+  const savedJson = localStorage.getItem("personalInfo");
+  const personalInfo = JSON.parse(savedJson);
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  const [fullName, setFullName] = useState(personalInfo.fullName || "");
+  const [jobTitle, setJobTitle] = useState(personalInfo.jobTitle || "");
+  const [email, setEmail] = useState(personalInfo.email || "");
+  const [phone, setPhone] = useState(personalInfo.phone || "");
+  const [city, setCity] = useState(personalInfo.city || "");
+  const [country, setCountry] = useState(personalInfo.country || "");
+  const [linkedIn, setLinkedIn] = useState(personalInfo.linkedIn || "");
 
-  componentDidMount() {
-    if (localStorage.getItem("personalInfo")) {
-      const savedJson = localStorage.getItem("personalInfo");
-      const personalInfo = JSON.parse(savedJson);
+  useEffect(() => {
+    updatePInfo(fullName, jobTitle, email, phone, city, country, linkedIn);
 
-      this.setState(
-        {
-          ...personalInfo,
-        },
-        () => {
-          this.props.updatePInfo(
-            this.state.fullName,
-            this.state.jobTitle,
-            this.state.email,
-            this.state.phone,
-            this.state.city,
-            this.state.country,
-            this.state.linkedIn
-          );
-        }
-      );
-    }
-  }
+    localStorage.setItem(
+      "personalInfo",
+      JSON.stringify({
+        fullName,
+        jobTitle,
+        email,
+        phone,
+        city,
+        country,
+        linkedIn,
+      })
+    );
+  }, [fullName, jobTitle, phone, email, city, country, linkedIn, updatePInfo]);
 
-  componentDidUpdate() {
-    if (!localStorage.getItem("personalInfo")) {
-      localStorage.setItem("personalInfo", JSON.stringify(this.state));
-    } else {
-      localStorage.removeItem("personalInfo");
-      localStorage.setItem("personalInfo", JSON.stringify(this.state));
-    }
-  }
+  // componentDidMount() {
+  //   if (localStorage.getItem("personalInfo")) {
+  //     const savedJson = localStorage.getItem("personalInfo");
+  //     const personalInfo = JSON.parse(savedJson);
 
-  handleChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
+  //     this.setState(
+  //       {
+  //         ...personalInfo,
+  //       },
+  //       () => {
+  //         this.props.updatePInfo(
+  //           this.state.fullName,
+  //           this.state.jobTitle,
+  //           this.state.email,
+  //           this.state.phone,
+  //           this.state.city,
+  //           this.state.country,
+  //           this.state.linkedIn
+  //         );
+  //       }
+  //     );
+  //   }
+  // }
 
-    this.setState({
-      [name]: value,
-    });
-  }
+  // componentDidUpdate() {
+  //   if (!localStorage.getItem("personalInfo")) {
+  //     localStorage.setItem("personalInfo", JSON.stringify(this.state));
+  //   } else {
+  //     localStorage.removeItem("personalInfo");
+  //     localStorage.setItem("personalInfo", JSON.stringify(this.state));
+  //   }
+  // }
 
-  handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    this.props.updatePInfo(
-      this.state.fullName,
-      this.state.jobTitle,
-      this.state.email,
-      this.state.phone,
-      this.state.city,
-      this.state.country,
-      this.state.linkedIn
-    );
-  }
+    updatePInfo(fullName, jobTitle, email, phone, city, country, linkedIn);
+  };
 
-  render() {
-    return (
-      <div className="personal-info">
-        <h3>Personal Info</h3>
-        <form action="" onSubmit={this.handleSubmit}>
-          <div className="form-row full-name">
-            <label htmlFor="">Full Name</label>
-            <input
-              type="text"
-              name="fullName"
-              onChange={this.handleChange}
-              value={this.state.fullName}
-              required
-            />
-          </div>
-          <div className="form-row job-title">
-            <label htmlFor="">Job Title</label>
-            <input
-              type="text"
-              name="jobTitle"
-              onChange={this.handleChange}
-              value={this.state.jobTitle}
-              required
-            />
-          </div>
-          <div className="form-row email">
-            <label htmlFor="">Email</label>
-            <input
-              type="email"
-              name="email"
-              onChange={this.handleChange}
-              value={this.state.email}
-              required
-            />
-          </div>
-          <div className="form-row phone">
-            <label htmlFor="">Phone</label>
-            <input
-              type="tel"
-              name="phone"
-              onChange={this.handleChange}
-              value={this.state.phone}
-              required
-            />
-          </div>
-          <div className="form-row city">
-            <label htmlFor="">City</label>
-            <input
-              type="text"
-              name="city"
-              onChange={this.handleChange}
-              value={this.state.city}
-              required
-            />
-          </div>
-          <div className="form-row country">
-            <label htmlFor="">Country</label>
-            <input
-              type="text"
-              name="country"
-              onChange={this.handleChange}
-              value={this.state.country}
-              required
-            />
-          </div>
-          <div className="form-row linkedIn">
-            <label htmlFor="">LinkedIn</label>
-            <input
-              type="url"
-              name="linkedIn"
-              onChange={this.handleChange}
-              value={this.state.linkedIn}
-              required
-            />
-          </div>
-          <div className="form-row submit-btn">
-            <button type="submit">Add</button>
-          </div>
-        </form>
-      </div>
-    );
-  }
+  return (
+    <div className="personal-info">
+      <h3>Personal Info</h3>
+      <form action="" onSubmit={handleSubmit}>
+        <div className="form-row full-name">
+          <label htmlFor="">Full Name</label>
+          <input
+            type="text"
+            name="fullName"
+            onChange={(e) => {
+              setFullName(e.target.value);
+            }}
+            value={fullName}
+            required
+          />
+        </div>
+        <div className="form-row job-title">
+          <label htmlFor="">Job Title</label>
+          <input
+            type="text"
+            name="jobTitle"
+            onChange={(e) => {
+              setJobTitle(e.target.value);
+            }}
+            value={jobTitle}
+            required
+          />
+        </div>
+        <div className="form-row email">
+          <label htmlFor="">Email</label>
+          <input
+            type="email"
+            name="email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            value={email}
+            required
+          />
+        </div>
+        <div className="form-row phone">
+          <label htmlFor="">Phone</label>
+          <input
+            type="tel"
+            name="phone"
+            onChange={(e) => {
+              setPhone(e.target.value);
+            }}
+            value={phone}
+            required
+          />
+        </div>
+        <div className="form-row city">
+          <label htmlFor="">City</label>
+          <input
+            type="text"
+            name="city"
+            onChange={(e) => {
+              setCity(e.target.value);
+            }}
+            value={city}
+            required
+          />
+        </div>
+        <div className="form-row country">
+          <label htmlFor="">Country</label>
+          <input
+            type="text"
+            name="country"
+            onChange={(e) => {
+              setCountry(e.target.value);
+            }}
+            value={country}
+            required
+          />
+        </div>
+        <div className="form-row linkedIn">
+          <label htmlFor="">LinkedIn</label>
+          <input
+            type="url"
+            name="linkedIn"
+            onChange={(e) => {
+              setLinkedIn(e.target.value);
+            }}
+            value={linkedIn}
+            required
+          />
+        </div>
+        <div className="form-row submit-btn">
+          <button type="submit">Add</button>
+        </div>
+      </form>
+    </div>
+  );
 }
-
-export default PersonalInfo;
