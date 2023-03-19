@@ -1,54 +1,34 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import uniqid from "uniqid";
 
-class GeneralForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: { text: "", id: uniqid() },
-    };
+function GeneralForm({ subject, updateSection }) {
+  const [text, setText] = useState("");
+  const [id, setId] = useState(uniqid());
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    this.props.updateSection(this.state.value);
+    updateSection({ text, id });
 
-    this.setState({
-      value: {
-        text: "",
-        id: uniqid(),
-      },
-    });
-  }
+    setText("");
+    setId(uniqid());
+  };
 
-  handleChange(event) {
-    this.setState({
-      value: {
-        text: event.target.value,
-        id: this.state.value.id,
-      },
-    });
-  }
-
-  render() {
-    return (
-      <div className="general-form">
-        <form action="" onSubmit={this.handleSubmit}>
-          <label htmlFor="">New-{this.props.subject}: </label>
-          <input
-            type="text"
-            value={this.state.value.text}
-            onChange={this.handleChange}
-            required
-          />
-          <button type="submit"></button>
-        </form>
-      </div>
-    );
-  }
+  return (
+    <div className="general-form">
+      <form action="" onSubmit={handleSubmit}>
+        <label htmlFor="">New-{subject}: </label>
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => {
+            setText(e.target.value);
+          }}
+          required
+        />
+        <button type="submit"></button>
+      </form>
+    </div>
+  );
 }
 
 export default GeneralForm;
