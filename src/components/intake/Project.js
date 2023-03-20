@@ -6,7 +6,7 @@ function Project({ updateProjects }) {
   const savedJson = localStorage.getItem("projectInfo");
   const storedProjects = JSON.parse(savedJson);
 
-  const [projects, setProjects] = useState(storedProjects.projects || []);
+  const [projects, setProjects] = useState(storedProjects || []);
   const [text, setText] = useState(""); //naming it 'text' only to assign in Highlight (other component store in 'text')
   const [subTitle, setSubTitle] = useState("");
   const [description, setDescription] = useState("");
