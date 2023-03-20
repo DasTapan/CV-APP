@@ -30,39 +30,6 @@ export default function PersonalInfo({ updatePInfo }) {
     );
   }, [fullName, jobTitle, phone, email, city, country, linkedIn, updatePInfo]);
 
-  // componentDidMount() {
-  //   if (localStorage.getItem("personalInfo")) {
-  //     const savedJson = localStorage.getItem("personalInfo");
-  //     const personalInfo = JSON.parse(savedJson);
-
-  //     this.setState(
-  //       {
-  //         ...personalInfo,
-  //       },
-  //       () => {
-  //         this.props.updatePInfo(
-  //           this.state.fullName,
-  //           this.state.jobTitle,
-  //           this.state.email,
-  //           this.state.phone,
-  //           this.state.city,
-  //           this.state.country,
-  //           this.state.linkedIn
-  //         );
-  //       }
-  //     );
-  //   }
-  // }
-
-  // componentDidUpdate() {
-  //   if (!localStorage.getItem("personalInfo")) {
-  //     localStorage.setItem("personalInfo", JSON.stringify(this.state));
-  //   } else {
-  //     localStorage.removeItem("personalInfo");
-  //     localStorage.setItem("personalInfo", JSON.stringify(this.state));
-  //   }
-  // }
-
   const handleSubmit = (event) => {
     event.preventDefault();
     updatePInfo(fullName, jobTitle, email, phone, city, country, linkedIn);

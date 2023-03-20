@@ -91,3 +91,81 @@ class Wrapper extends Component {
 }
 
 export default Wrapper;
+
+//------------------------------------------------------------------------
+
+// import React, { useState } from "react";
+// import Intake from "./components/intake/Intake";
+// import Outlet from "./components/outlet/Outlet";
+
+// function Wrapper() {
+//   const [personalInfo, setPersonalInfo] = useState({});
+//   const [skills, setSkills] = useState([]);
+//   const [languages, setLanguages] = useState([]);
+//   const [interests, setInterests] = useState([]);
+//   const [projects, setProjects] = useState([]);
+//   const [education, setEducation] = useState([]);
+
+//   const updatePInfo = (
+//     fullName,
+//     jobTitle,
+//     email,
+//     phone,
+//     city,
+//     country,
+//     linkedIn
+//   ) => {
+//     setPersonalInfo({
+//       fullName,
+//       jobTitle,
+//       email,
+//       phone,
+//       city,
+//       country,
+//       linkedIn,
+//     });
+//   };
+
+//   const updateSkills = (newSkillArr) => {
+//     setSkills([...newSkillArr]);
+//   };
+
+//   const updateLanguages = (newLangArr) => {
+//     setLanguages([...newLangArr]);
+//   };
+
+//   const updateInterests = (newInterestArr) => {
+//     setInterests([...newInterestArr]);
+//   };
+
+//   const updateProjects = (newProjectArr) => {
+//     setProjects([...newProjectArr]);
+//   };
+
+//   const updateEducation = (newEduArr) => {
+//     setEducation([...newEduArr]);
+//   };
+
+//   return (
+//     <div className="wrapper">
+//       <Intake
+//         updatePInfo={updatePInfo}
+//         updateSkills={updateSkills}
+//         updateLanguages={updateLanguages}
+//         updateInterests={updateInterests}
+//         updateProjects={updateProjects}
+//         updateEducation={updateEducation}
+//       />
+//       <Outlet
+//         personalDetails={personalInfo}
+//         skillDetails={skills}
+//         langDetails={languages}
+//         interestDetails={interests}
+//         projectDetails={projects}
+//         eduDetails={education}
+//       />
+//     </div>
+//   );
+// }
+
+// export default Wrapper;
